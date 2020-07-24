@@ -63,7 +63,7 @@ namespace PusheenTracker.Tests
     {
       Vendor vendorOne = new Vendor("Tour de Jours", "French-Asian");
       Vendor vendorTwo = new Vendor("Mo-Mo", "Filipino Treats");
-      Vendor result = Vendor.Find(1);
+      Vendor result = Vendor.Find(2);
       Assert.AreEqual(vendorTwo , result);
     }
 
