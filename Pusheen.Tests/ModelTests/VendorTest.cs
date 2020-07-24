@@ -22,7 +22,7 @@ namespace PusheenTracker.Tests
     }
 
     [TestMethod]
-GCNotificationStatus a    public void GetName_ReturnsName_String()
+    public void GetName_ReturnsName_String()
     {
       string name = "Tour de Jours";
       Vendor createVendor = new Vendor(name, "French-Asian");
@@ -48,6 +48,14 @@ GCNotificationStatus a    public void GetName_ReturnsName_String()
       Vendor createVendor = new Vendor(name, description);
       int result = createVendor.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyVendorList_VendorList()
+    {
+    List<Vendor> newList = new List<Vendor> { };
+    List<Vendor> result = Vendor.GetAll();
+    CollectionAssert.AreEqual(newList, result);
     }
 
   }
