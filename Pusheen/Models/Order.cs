@@ -6,7 +6,7 @@ namespace PusheenTracker.Models
   {
     public string OrderType { get; set; }
 
-    public string OrderQuantity { get; set; }
+    public int OrderQuantity { get; set; }
 
     public int OrderPrice { get; set; }
 
@@ -21,13 +21,13 @@ namespace PusheenTracker.Models
       Id = _orderDetails.Count;
     }
 
-    public Order(string orderType, string orderQuantity)
+    public Order(string orderType, int orderQuantity)
       : this(orderType)
     {
       OrderQuantity = orderQuantity;
     }
 
-     public Order(string orderType, string orderQuantity, int orderPrice)
+     public Order(string orderType, int orderQuantity, int orderPrice)
       : this(orderType, orderQuantity)
     {
      OrderPrice = orderPrice;
