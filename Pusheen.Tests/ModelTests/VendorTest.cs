@@ -25,6 +25,15 @@ namespace PusheenTracker.Tests
       Assert.AreEqual(name, result);
     }
 
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "TOUS les JOURS has developed into a reputable bakery & café franchise, specializing in French-Asian inspired baked goods, passionately made from the finest ingredients.";
+      Vendor createDescription = new Vendor(description);
+      string result = createDescription.Description;
+      Assert.AreEqual(description, result);
+    }
+
   }
   
 }
