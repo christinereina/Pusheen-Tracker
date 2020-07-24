@@ -35,6 +35,16 @@ namespace PusheenTracker.Tests
       Assert.AreEqual(description, result);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      string name = "Tour de Jours";
+      string description = "TOUS les JOURS has developed into a reputable bakery & café franchise, specializing in French-Asian inspired baked goods, passionately made from the finest ingredients.";
+      Vendor createVendor = new Vendor(name, description);
+      int result = createVendor.Id;
+      Assert.AreEqual(1, result);
+    }
+
   }
   
 }
