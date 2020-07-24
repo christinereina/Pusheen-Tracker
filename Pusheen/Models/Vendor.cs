@@ -26,8 +26,6 @@ namespace PusheenTracker.Models
 
       public static List<Vendor> GetAll()
     {
-      List<Vendor> allVendors = new List<Vendor> {new Vendor("Mo-Mo's", "Filipino Treats") };
-      return allVendors;
       return _vendorList;
     }
     
