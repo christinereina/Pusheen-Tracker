@@ -58,6 +58,15 @@ namespace PusheenTracker.Tests
     CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      Vendor vendorOne = new Vendor("Tour de Jours", "French-Asian");
+      Vendor vendorTwo = new Vendor("Mo-Mo", "Filipino Treats");
+      Vendor result = Vendor.Find(1);
+      Assert.AreEqual(vendorTwo , result);
+    }
+
   }
   
 }
