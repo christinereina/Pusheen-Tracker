@@ -6,8 +6,13 @@ using System.Collections.Generic;
 namespace PusheenTracker.Tests
 {
   [TestClass]
-  public class AlbumTests
+  public class VendorTests : IDisposable
   {
+
+     public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -17,7 +22,7 @@ namespace PusheenTracker.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+GCNotificationStatus a    public void GetName_ReturnsName_String()
     {
       string name = "Tour de Jours";
       Vendor createVendor = new Vendor(name, "French-Asian");

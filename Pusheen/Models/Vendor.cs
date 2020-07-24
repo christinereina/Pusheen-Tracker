@@ -18,6 +18,11 @@ namespace PusheenTracker.Models
       _vendorList.Add(this);
       Id = _vendorList.Count;
     }
+
+      public static void ClearAll()
+    {
+      _vendorList.Clear();
+    }
     
   }
 }
