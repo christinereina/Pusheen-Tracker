@@ -13,6 +13,9 @@ This application to help Pusheen track the vendors that purchase baked goods for
 
 | Behavior   |   Input   |  Output | 
 |----------|:-------------:|------:|
+|  Program should create an `Vendor` object with property `vendorName` and an Id  |   |  
+|  Program should create an `Order` object with property  `orderName` and an Id  |   |  
+|  Program should add an `Order` object to an `Vendor` object  |   |   |
 
 ## Setup/Installation Requirements
 
