@@ -12,7 +12,7 @@ namespace PusheenTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor createVendor = new Vendor("Tour de Jours");
+      Vendor createVendor = new Vendor("Tour de Jours", "French-Asian");
       Assert.AreEqual(typeof(Vendor), createVendor.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace PusheenTracker.Tests
     public void GetName_ReturnsName_String()
     {
       string name = "Tour de Jours";
-      Vendor createVendor = new Vendor(name);
+      Vendor createVendor = new Vendor(name, "French-Asian");
       string result = createVendor.Name;
       Assert.AreEqual(name, result);
     }
@@ -28,9 +28,10 @@ namespace PusheenTracker.Tests
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
+      string name = "Tour de Jours";
       string description = "TOUS les JOURS has developed into a reputable bakery & café franchise, specializing in French-Asian inspired baked goods, passionately made from the finest ingredients.";
-      Vendor createDescription = new Vendor(description);
-      string result = createDescription.Description;
+      Vendor createVendor = new Vendor(name, description);
+      string result = createVendor.Description;
       Assert.AreEqual(description, result);
     }
 
