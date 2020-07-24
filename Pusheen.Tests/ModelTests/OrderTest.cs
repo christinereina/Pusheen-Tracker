@@ -19,7 +19,7 @@ namespace PusheenTracker.Tests
      [TestMethod]
       public void OrderConstructor_CreatesInstanceOfOrder_Price()
      {
-      Order newOrder = new Order("Red Bean Buns", 20, "50" );
+      Order newOrder = new Order("Red Bean Buns", 20, 50 );
       Assert.AreEqual(typeof(Order), newOrder.GetType());
      }
   }
