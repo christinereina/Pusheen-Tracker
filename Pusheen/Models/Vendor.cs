@@ -10,7 +10,7 @@ namespace PusheenTracker.Models
 
     public Vendor(string name)
     {
-      Name = "";
+      Name = name;
       _vendorList.Add(this);
       Id = _vendorList.Count;
     }
