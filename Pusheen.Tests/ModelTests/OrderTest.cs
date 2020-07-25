@@ -76,6 +76,15 @@ namespace PusheenTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectOrderObject_Order()
+    {
+      Order newOrder1 = new Order("Red Bean Buns", 20, 50 );
+      Order newOrder2 = new Order("Green Tea Cloud Cakes", 5, 99);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder1, result);
+    }
+
 
   }
 }
