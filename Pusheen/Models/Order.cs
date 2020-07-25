@@ -15,14 +15,6 @@ namespace PusheenTracker.Models
     public List<Vendor> Vendors { get; set; }
     private static List<Order> _orderDetails = new List<Order>{};
 
-    public Order(string orderType)
-    {
-      OrderType = orderType;
-      _orderDetails.Add(this);
-      Id = _orderDetails.Count;
-      Vendors = new List<Vendor> {};
-    }
-
     public Order(string orderType, int orderQuantity)
       : this(orderType)
     {
@@ -33,6 +25,18 @@ namespace PusheenTracker.Models
       : this(orderType, orderQuantity)
     {
      OrderPrice = orderPrice;
+    }
+
+      public Order(string orderType)
+    {
+      OrderType = orderType;
+      _orderDetails.Add(this);
+      Id = _orderDetails.Count;
+      Vendors = new List<Vendor> {};
+    }
+     public static void ClearAll()
+    {
+      _orderDetails.Clear();
     }
  
   }
