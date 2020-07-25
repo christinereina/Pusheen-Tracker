@@ -54,6 +54,14 @@ namespace PusheenTracker.Tests
       Assert.AreEqual(orderPrice, orderPriceResult);      
     }
 
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+    Order newOrder = new Order("Red Bean Buns", 20, 50 );
+    int result = newOrder.Id;
+    Assert.AreEqual(1, result);
+    }
+
 
   }
 }
