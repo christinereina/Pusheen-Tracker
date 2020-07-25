@@ -12,6 +12,7 @@ namespace PusheenTracker.Models
 
     public int Id { get; }
 
+    public List<Vendor> Vendors { get; set; }
     private static List<Order> _orderDetails = new List<Order>{};
 
     public Order(string orderType)
@@ -19,6 +20,7 @@ namespace PusheenTracker.Models
       OrderType = orderType;
       _orderDetails.Add(this);
       Id = _orderDetails.Count;
+      Vendors = new List<Vendor> {};
     }
 
     public Order(string orderType, int orderQuantity)
