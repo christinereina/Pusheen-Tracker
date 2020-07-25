@@ -66,6 +66,16 @@ namespace PusheenTracker.Tests
     Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_OrderList()
+    {
+      Order newOrder1 = new Order("Red Bean Buns", 20, 50 );
+      Order newOrder2 = new Order("Green Tea Cloud Cakes", 5, 99);
+      List<Order> newList = new List<Order> {newOrder1, newOrder2};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
 
   }
 }
