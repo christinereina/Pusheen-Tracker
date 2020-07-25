@@ -85,6 +85,17 @@ namespace PusheenTracker.Tests
       Assert.AreEqual(newOrder1, result);
     }
 
+    [TestMethod]
+    public void AddVendor_AddsVendortToOrderList_OrderList()
+    {
+      string name1 = "Tour de Jours";
+      Vendor createVendor = new Vendor(name1);
+      List<Vendor> newList = new List<Vendor> { createVendor };
+      Order newOrder1 = new Order("Red Bean Buns", 20, 50 );
+      newOrder1.AddVendor(createVendor);
+      List<Vendor> result = newOrder1.Vendors;
+      CollectionAssert.AreEqual(newList, result);  
+    }
 
   }
 }
