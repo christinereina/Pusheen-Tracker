@@ -38,6 +38,11 @@ namespace PusheenTracker.Models
     {
       _orderDetails.Clear();
     }
+
+    public static List<Order> GetAll()
+    {
+      return _orderDetails;
+    }
  
   }
 }
