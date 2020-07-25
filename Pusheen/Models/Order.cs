@@ -43,6 +43,11 @@ namespace PusheenTracker.Models
     {
       return _orderDetails;
     }
+
+    public static Order Find(int searchId)
+    {
+      return _orderDetails[searchId - 1];
+    }
  
   }
 }

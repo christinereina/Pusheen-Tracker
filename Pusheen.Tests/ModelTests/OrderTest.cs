@@ -81,7 +81,7 @@ namespace PusheenTracker.Tests
     {
       Order newOrder1 = new Order("Red Bean Buns", 20, 50 );
       Order newOrder2 = new Order("Green Tea Cloud Cakes", 5, 99);
-      Order result = Order.Find(2);
+      Order result = Order.Find(1);
       Assert.AreEqual(newOrder1, result);
     }
 
