@@ -22,6 +22,16 @@ namespace PusheenTracker.Tests
       Order newOrder = new Order("Red Bean Buns", 20, 50 );
       Assert.AreEqual(typeof(Order), newOrder.GetType());
      }
+
+    [TestMethod]
+    public void GetOrderType_ReturnOrderType_String()
+    {
+      string orderType = "Green Tea Cloud Cakes";
+      Order newOrder = new Order(orderType);
+      string result = newOrder.OrderType;
+      Assert.AreEqual(orderType, result);
+    }
+
   }
 
 }
