@@ -14,5 +14,18 @@ namespace PusheenTracker.Controllers
       return View(allVendors);
     }
 
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string vendorDescription)
+    {
+      Vendor createVendor = new Vendor(vendorName, vendorDescription);
+      return RedirectToAction("Index");
+    }
+
   }
 }
