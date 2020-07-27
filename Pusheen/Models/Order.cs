@@ -48,6 +48,11 @@ namespace PusheenTracker.Models
     {
       return _orderDetails[searchId - 1];
     }
+
+    public void AddVendor(Vendor vendor)
+    {
+      Vendors.Add(vendor);
+    }
  
   }
 }
