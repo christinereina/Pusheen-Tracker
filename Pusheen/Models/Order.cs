@@ -4,55 +4,38 @@ namespace PusheenTracker.Models
 {
   public class Order
   {
-    public string OrderType { get; set; }
+    public string Type { get; set; }
 
-    public int OrderQuantity { get; set; }
+    public int Quantity { get; set; }
 
-    public int OrderPrice { get; set; }
+    public int Price { get; set; }
 
     public int Id { get; }
 
-    public List<Vendor> Vendors { get; set; }
-    private static List<Order> _orderDetails = new List<Order>{};
+    private static List<Order> _instances = new List<Order>{ };
 
-    public Order(string orderType, int orderQuantity)
-      : this(orderType)
+      public Order(string type, int quantity, int price)
     {
-      OrderQuantity = orderQuantity;
-    }
-
-     public Order(string orderType, int orderQuantity, int orderPrice)
-      : this(orderType, orderQuantity)
-    {
-     OrderPrice = orderPrice;
-    }
-
-      public Order(string orderType)
-    {
-      OrderType = orderType;
-      _orderDetails.Add(this);
-      Id = _orderDetails.Count;
-      Vendors = new List<Vendor> {};
+      Type = type;
+      Quantity = quantity;
+      Price = price;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
      public static void ClearAll()
     {
-      _orderDetails.Clear();
+      _instances.Clear();
     }
 
     public static List<Order> GetAll()
     {
-      return _orderDetails;
+      return _instances;
     }
 
     public static Order Find(int searchId)
     {
-      return _orderDetails[searchId - 1];
+      return _instances[searchId - 1];
     }
 
-    public void AddVendor(Vendor vendor)
-    {
-      Vendors.Add(vendor);
-    }
- 
   }
 }

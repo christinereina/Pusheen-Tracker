@@ -13,19 +13,6 @@ namespace PusheenTracker.Tests
     {
       Order.ClearAll();
     }
-    [TestMethod]
-    public void OrderConstructor_CreatesInstanceOfOrder_Order()
-    {
-      Order newOrder = new Order("5 red bean buns");
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
-    }
-
-    [TestMethod]
-      public void OrderConstructor_CreatesInstanceOfOrder_Quantity()
-     {
-      Order newOrder = new Order("Red Bean Buns", 20 );
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
-     }
 
      [TestMethod]
       public void OrderConstructor_CreatesInstanceOfOrder_Price()
@@ -37,10 +24,10 @@ namespace PusheenTracker.Tests
     [TestMethod]
     public void GetOrderType_ReturnOrderType_String()
     {
-      string orderType = "Green Tea Cloud Cakes";
-      Order newOrder = new Order(orderType);
-      string result = newOrder.OrderType;
-      Assert.AreEqual(orderType, result);
+      string type = "Green Tea Cloud Cakes";
+      Order newOrder = new Order(type, 4, 5);
+      string result = newOrder.Type;
+      Assert.AreEqual(type, result);
     }
 
     [TestMethod]
@@ -50,9 +37,9 @@ namespace PusheenTracker.Tests
       int orderQuantity = 20;
       int orderPrice = 200;
       Order newOrder = new Order(orderType, orderQuantity, orderPrice);
-      string orderTypeResult = newOrder.OrderType;
-      int orderQuantityResult = newOrder.OrderQuantity;
-      int orderPriceResult = newOrder.OrderPrice;
+      string orderTypeResult = newOrder.Type;
+      int orderQuantityResult = newOrder.Quantity;
+      int orderPriceResult = newOrder.Price;
       Assert.AreEqual(orderType, orderTypeResult);
       Assert.AreEqual(orderQuantity, orderQuantityResult);
       Assert.AreEqual(orderPrice, orderPriceResult);      
@@ -83,17 +70,6 @@ namespace PusheenTracker.Tests
       Order newOrder2 = new Order("Green Tea Cloud Cakes", 5, 99);
       Order result = Order.Find(1);
       Assert.AreEqual(newOrder1, result);
-    }
-
-    [TestMethod]
-    public void AddVendor_AddsVendortToOrderList_OrderList()
-    {
-      Vendor createVendor = new Vendor("Tour de Jours", "French-Asian");
-      List<Vendor> newList = new List<Vendor> { createVendor };
-      Order newOrder1 = new Order("Red Bean Buns", 20, 50 );
-      newOrder1.AddVendor(createVendor);
-      List<Vendor> result = newOrder1.Vendors;
-      CollectionAssert.AreEqual(newList, result);  
     }
 
   }
