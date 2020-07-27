@@ -1,10 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using PusheenTracker.Models;
+using System.Collections.Generic;
+using System;
 
 namespace PusheenTracker.Controllers
 {
-  public class VenderController : Controller
+  public class VendorsController : Controller
   {
-    //Routes go here
+    [HttpGet("/vendors")]
+    public ActionResult Index()
+    {
+      List<Vendor> allVendors = Vendor.GetAll();
+      return View(allVendors);
+    }
+
   }
 }
