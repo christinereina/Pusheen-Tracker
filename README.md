@@ -13,15 +13,19 @@ This application to help Pusheen track the vendors that purchase baked goods for
 
 | Behavior   |   Input   |  Output | 
 |----------|:-------------:|------:|
-|  Program should create an `Vendor` object with property `vendorName` and an Id  |   |  
-|  Program should create an `Order` object with property  `orderName` and an Id  |   |  
-|  Program should add an `Order` object to an `Vendor` object  |   |   |
+|  Program should create a new Vendor with description | Vendor: Tour De Jour  Description: French-Asian |  Tour De Jour
+|  Program should create a new order for Vendor  |  New Order: Red Bean Buns |  Red Bean Buns
 
 ## Setup/Installation Requirements
 
+1. Clone this repository from GitHub.
+2. Open the downloaded directory in a text editor of your choice. (VSCode, Atom, etc.)
+3. To install the REPL dotnet script, run dotnet tool install -g dotnet-script in your terminal.
+4. Run the program with the command dotnet build.
 
 ## Known Bugs
 
+* At times, the list of Vendors will come up with an error 
 
 ## Support and contact details
 
