@@ -21,7 +21,11 @@ This application to help Pusheen track the vendors that purchase baked goods for
 1. Clone this repository from GitHub.
 2. Open the downloaded directory in a text editor of your choice. (VSCode, Atom, etc.)
 3. To install the REPL dotnet script, run dotnet tool install -g dotnet-script in your terminal.
-4. Run the program with the command dotnet build.
+4. Run the program with the command dotnet build.To install the necessary dependencies, run the following commands:
+* dotnet restore
+* dotnet build
+* dotnet run
+
 
 ## Known Bugs
 
