@@ -1,4 +1,13 @@
 body {
-  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px;
   max-width: 1200px;
+  background-color: lightcoral;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'Coiny', cursive;
+  color: white;
 }
