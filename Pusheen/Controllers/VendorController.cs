@@ -22,9 +22,9 @@ namespace PusheenTracker.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName, string vendorDescription)
+    public ActionResult Create(string vendorName)
     {
-      Vendor createVendor = new Vendor(vendorName, vendorDescription);
+      Vendor createVendor = new Vendor(vendorName);
       return RedirectToAction("Index");
     }
 
@@ -32,26 +32,25 @@ namespace PusheenTracker.Controllers
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = Vendor.Find(id);
+      Vendor selectedVendor = Vendor.FindVendor(id);
       List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
-    }
+;    }
 
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderType, int orderQuantity, int orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectVendor = Vendor.Find(vendorId);
+      Vendor foundVendor = Vendor.FindVendor(vendorId);
       Order newOrder = new Order(orderType, orderQuantity, orderPrice);
-      selectVendor.AddOrder(newOrder);
-      List<Order> vendorOrders = selectVendor.Orders;
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
-      model.Add("vendors", selectVendor);
+      model.Add("vendors", foundVendor);
       return View("Show", model);
     }
-
 
   }
 }

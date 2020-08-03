@@ -1,13 +1,20 @@
 body {
-  margin-top: 50px;
-  padding: 50px;
-  max-width: 1200px;
-  background-color: lightcoral;
   font-family: 'Open Sans', sans-serif;
+  padding-top: 50px;
+  margin: 50px;
+  background-color: lightskyblue;
+  text-align: center;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 70px;
   font-family: 'Coiny', cursive;
-  color: white;
+  color: aliceblue;
+  text-align: center;
+}
+
+img {
+  width: 650px;
+  height: auto;
+
 }

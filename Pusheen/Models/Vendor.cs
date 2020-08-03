@@ -8,20 +8,16 @@ namespace PusheenTracker.Models
 
     public string Name { get; set; }
 
-    public string Description { get; set; }
+    public List<Order> Orders { get; set; }
 
     public int Id { get; }
 
-    public List<Order> Orders { get; set; }
-
-    public Vendor(string vendorName, string vendorDescription)
+    public Vendor(string vendorName)
     {
       Name = vendorName;
-      Description = vendorDescription;
-      Orders = new List<Order> { };
       _instances.Add(this);
       Id = _instances.Count;
-
+      Orders = new List<Order> { };
     }
 
       public static void ClearAll()
@@ -34,7 +30,7 @@ namespace PusheenTracker.Models
       return _instances;
     }
 
-     public static Vendor Find(int searchId)
+     public static Vendor FindVendor(int searchId)
     {
       return _instances[searchId - 1];
     }
