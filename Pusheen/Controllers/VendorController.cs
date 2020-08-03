@@ -32,7 +32,7 @@ namespace PusheenTracker.Controllers
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = Vendor.FindVendor(id);
+      Vendor selectedVendor = Vendor.Find(id);
       List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
@@ -43,12 +43,12 @@ namespace PusheenTracker.Controllers
     public ActionResult Create(int vendorId, string orderType, int orderQuantity, int orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor foundVendor = Vendor.FindVendor(vendorId);
+      Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderType, orderQuantity, orderPrice);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
-      model.Add("vendors", foundVendor);
+      model.Add("vendor", foundVendor);
       return View("Show", model);
     }
 
