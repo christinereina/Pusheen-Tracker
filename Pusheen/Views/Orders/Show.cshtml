@@ -3,12 +3,11 @@
 }
 
 <img src='~/images/orders.gif'/>
-<h1>Order Information</h1>
+<h1>Order Information for @Model["vendor"].Name</h1>
 
-<h2>@Model["order"].Type</h2>
-<h2>@Model["order"].Quantity</h2>
-<h2>@Model["order"].Price</h2>
-<h3>@Model["vendor"].Name</h3>
+<h2>Order Type: @Model["order"].Type</h2>
+<h2>Order Quantity: @Model["order"].Quantity</h2>
+<h2>Order Price: $@Model["order"].Price</h2>
 
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add</a>
 <a href='/vendors'>View all vendors</a>
